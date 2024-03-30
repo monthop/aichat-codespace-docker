@@ -1,0 +1,1 @@
+docker run --rm -it --user 1000 -v /workspaces/aichat-codespace-docker/devel:/opt/devel nikolaik/python-nodejs:python3.10-nodejs18-bullseye bash
