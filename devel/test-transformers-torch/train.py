@@ -9,7 +9,7 @@ model = GPT2LMHeadModel.from_pretrained('gpt2')
 # Prepare dataset
 train_dataset = TextDataset(
     tokenizer=tokenizer,
-    file_path="./train_dataset.txt",
+    file_path="./train_dataset_with_category.csv",
     block_size=128
 )
 data_collator = DataCollatorForLanguageModeling(
@@ -18,7 +18,7 @@ data_collator = DataCollatorForLanguageModeling(
 
 # Training arguments
 training_args = TrainingArguments(
-    output_dir="./output",
+    output_dir="/tmp/output",
     overwrite_output_dir=True,
     num_train_epochs=3,
     per_device_train_batch_size=16,
@@ -38,5 +38,5 @@ trainer = Trainer(
 trainer.train()
 
 # Save model
-model.save_pretrained("./my_gpt2_model")
-tokenizer.save_pretrained("./my_gpt2_tokenizer")
+model.save_pretrained("/tmp/my_gpt2_model")
+tokenizer.save_pretrained("/tmp/my_gpt2_tokenizer")
