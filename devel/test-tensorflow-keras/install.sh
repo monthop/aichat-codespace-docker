@@ -1,0 +1,1 @@
+pip install tensorflow[and-cuda]==2.10
